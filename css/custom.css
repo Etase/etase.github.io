@@ -369,3 +369,16 @@
 .active > span {
   color: rgb(97, 44, 0);
 }
+
+/* 博文标题和信息 */
+[data-theme="light"] .post-title,
+[data-theme="light"] .meta-firstline,
+[data-theme="light"] .meta-secondline,
+[data-theme="light"] #twikoo-count {
+  color: #333 !important;
+}
+
+/* 版权信息 */
+[data-theme="light"] .post-copyright-info > a {
+  color: #333 !important;
+}
