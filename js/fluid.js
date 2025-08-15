@@ -342,5 +342,7 @@ function fluidFlowField() {
   animate();
 }
 
+// 延迟启动，确保主题资源加载完成
+setTimeout(fluidFlowField, 1000);
 // 启动效果
-fluidFlowField();
+// fluidFlowField();
