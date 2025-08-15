@@ -293,7 +293,7 @@ function fluidFlowField() {
   // 创建流场和粒子（优化版）
   const flowField = new FlowField();
   const particles = [];
-  const particleCount = Math.floor((width * height) / 20000); // 减少粒子数量
+  const particleCount = Math.floor((width * height) / 40000); // 减少粒子数量
 
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());

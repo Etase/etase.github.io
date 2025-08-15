@@ -388,3 +388,19 @@
 .hljs {
   background: rgba(0, 0, 0, 0) !important;
 }
+
+/* 页脚版权 */
+[data-theme="light"] .copyright {
+  color: #333 !important;
+}
+
+/* 页脚自定义文字 */
+.footer_custom_text {
+  width: fit-content;
+  margin: auto;
+  background: linear-gradient(90deg, #ff6ec4, #4c5bff, #00f0ff, #ff6ec4);
+  -webkit-background-clip: text;
+  background-size: auto;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
