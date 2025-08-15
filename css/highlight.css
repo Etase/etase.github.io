@@ -1,0 +1,161 @@
+:root {
+  /* 背景使用纯黑，突出霓虹效果 */
+  --hl-bg: #000000;
+
+  /* 工具栏使用深蓝紫，与代码背景形成层次 */
+  --hltools-bg: #0f1419;
+  --hltools-color: #00f0ff; /* 使用函数名的霓虹青 */
+
+  /* 行号区域使用深蓝黑，与工具栏协调 */
+  --hlnumber-bg: #0a0a0f;
+  --hlnumber-color: #73aef6; /* 使用变量名的蓝色 */
+
+  /* 滚动条和展开按钮使用霓虹粉 */
+  --hlscrollbar-bg: #ff6ec4; /* 关键字的霓虹粉 */
+  --hlexpand-bg: #ff6ec4;
+
+  /* 添加霓虹发光效果 */
+  --neon-glow: 0 0 5px currentColor, 0 0 10px currentColor;
+}
+
+/* 工具栏发光效果 */
+.tools-bg {
+  box-shadow: inset 0 0 20px rgba(0, 240, 255, 0.3),
+    0 0 30px rgba(0, 240, 255, 0.2);
+}
+
+/* 行号区域渐变背景 */
+.hljs-ln-numbers {
+  background: linear-gradient(90deg, #0a0a0f 0%, #0f1419 100%);
+}
+
+/* 滚动条发光效果 */
+::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 10px #ff6ec4;
+}
+
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1.2em;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1),
+    inset 0 0 8px rgba(255, 255, 255, 0.05);
+  font-family: "Fira Code", "JetBrains Mono", "Cascadia Code", Consolas,
+    "Courier New", monospace;
+  font-size: 1em;
+  line-height: 1.6;
+  animation: fadeInZoom 0.6s ease-out;
+}
+
+pre code.hljs span:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  display: inline-block;
+  border-radius: 4px;
+}
+
+pre code.hljs > span:hover {
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+/* 淡入缩放动画 */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 呼吸效果动画 */
+@keyframes neonPulse {
+  0%,
+  100% {
+    text-shadow: 0 0 8px var(--neon-color, rgba(255, 255, 255, 0.6));
+  }
+  50% {
+    text-shadow: 0 0 16px var(--neon-color, rgba(255, 255, 255, 1));
+  }
+}
+
+/* 渐变流动动画 */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* 关键字 */
+.hljs-keyword {
+  background: linear-gradient(90deg, #ff6ec4, #4c5bff, #00f0ff, #ff6ec4);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  --neon-color: rgba(255, 110, 196, 0.9);
+}
+
+/* 函数名 */
+.hljs-title.function_ {
+  background: linear-gradient(90deg, #00f0ff, #8be9fd, #4c5bff, #00f0ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  --neon-color: rgba(139, 233, 253, 0.9);
+}
+
+/* 数字 */
+.hljs-number {
+  color: #ffb86c;
+  --neon-color: rgba(255, 184, 108, 0.9);
+}
+
+/* 字符串 */
+.hljs-string {
+  color: #50fa7b;
+  --neon-color: rgba(80, 250, 123, 0.9);
+}
+
+/* 注释 - 保持低调 */
+.hljs-comment {
+  color: rgba(180, 180, 180, 0.5);
+  font-style: italic;
+}
+
+/* 元信息 */
+.hljs-meta {
+  color: #f1fa8c;
+  --neon-color: rgba(241, 250, 140, 0.9);
+}
+
+/* 标点 */
+.hljs-punctuation {
+  color: #bababa;
+}
+
+/* 变量名 / 标识符 */
+.hljs-params {
+  color: #73aef6;
+}
+
+/* 类型 */
+.hljs-built_in,
+.hljs-doctag, /* guessing */
+.hljs-quote,
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+  color: #ffb81f;
+}
+
+/* 变量名 / 标识符 */
+.hljs-operator {
+  color: #bdbdbd;
+}
