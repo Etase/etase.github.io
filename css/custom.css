@@ -1,9 +1,11 @@
 /* 页脚与头图透明 */
 #footer {
   background: transparent !important;
+  color: #333; /* 白天模式深色文字 */
 }
 #page-header {
   background: transparent !important;
+  color: #333; /* 白天模式深色文字 */
 }
 
 /* 白天模式遮罩透明 */
@@ -25,31 +27,40 @@
 /* 夜间模式菜单栏发光字 */
 [data-theme="dark"] #nav .site-page,
 [data-theme="dark"] #nav .menus_items .menus_item .menus_item_child li a {
-  text-shadow: 0 0 2px var(rgb(179, 71, 241)) !important;
+  text-shadow: 0 0 2px rgb(179, 71, 241) !important;
+  color: #fff !important; /* 夜间模式亮色文字 */
 }
 
 /* 手机端适配 */
 [data-theme="dark"] #sidebar #sidebar-menus .menus_items .site-page {
-  text-shadow: 0 0 2px var(换成自己喜欢的颜色例如紫色rgb(179, 71, 241)) !important;
+  text-shadow: 0 0 2px rgb(179, 71, 241) !important;
+  color: #fff !important; /* 夜间模式亮色文字 */
 }
+
 /* 侧边栏个人信息卡片动态渐变色 */
-/* 侧边栏个人信息卡片 - 原创酷炫效果 */
 #aside-content > .card-widget.card-info {
   position: relative;
-  background: #0a0a0a;
+  background: #f5f5f5; /* 白天模式浅色背景 */
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(255, 0, 255, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   transform-style: preserve-3d;
   perspective: 1000px;
   transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  /* 确保卡片本身可以接收鼠标事件 */
+  color: #333; /* 白天模式深色文字 */
   pointer-events: auto;
 }
 
-/* 动态流体渐变背景 */
-#aside-content > .card-widget.card-info::before {
+/* 夜间模式卡片样式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info {
+  background: #0a0a0a; /* 夜间模式深色背景 */
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(255, 0, 255, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  color: #fff; /* 夜间模式亮色文字 */
+}
+
+/* 动态流体渐变背景 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -81,7 +92,6 @@
   filter: blur(25px);
   opacity: 0.7;
   z-index: 0;
-  /* 关键修改：禁用鼠标事件 */
   pointer-events: none;
 }
 
@@ -97,8 +107,8 @@
   }
 }
 
-/* 动态粒子效果 */
-#aside-content > .card-widget.card-info::after {
+/* 动态粒子效果 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info::after {
   content: "";
   position: absolute;
   top: 0;
@@ -119,7 +129,6 @@
   animation: particleMove 20s linear infinite;
   opacity: 0.4;
   z-index: 1;
-  /* 关键修改：禁用鼠标事件 */
   pointer-events: none;
 }
 
@@ -132,22 +141,21 @@
   }
 }
 
-/* 3D悬浮效果 */
-#aside-content > .card-widget.card-info:hover {
+/* 3D悬浮效果 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info:hover {
   transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
   box-shadow: 0 15px 35px rgba(0, 255, 255, 0.4),
     0 0 80px rgba(255, 0, 255, 0.3), inset 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
-/* 霓虹文字效果 */
-#aside-content > .card-widget.card-info .card-info-title {
+/* 霓虹文字效果 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-title {
   position: relative;
   color: #fff;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(0, 255, 255, 0.8),
     0 0 15px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.4);
   animation: neonFlicker 3s infinite alternate;
   z-index: 2;
-  /* 确保文字可交互 */
   pointer-events: auto;
 }
 
@@ -161,8 +169,8 @@
   }
 }
 
-/* 动态边框光效 */
-#aside-content > .card-widget.card-info .border-glow {
+/* 动态边框光效 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info .border-glow {
   position: absolute;
   top: -2px;
   left: -2px;
@@ -182,7 +190,6 @@
   animation: borderGlow 8s ease infinite;
   filter: blur(5px);
   opacity: 0.7;
-  /* 关键修改：禁用鼠标事件 */
   pointer-events: none;
 }
 
@@ -198,8 +205,8 @@
   }
 }
 
-/* 内容区域玻璃态效果 */
-#aside-content > .card-widget.card-info .card-info-content {
+/* 内容区域玻璃态效果 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info .card-info-content {
   position: relative;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -207,12 +214,11 @@
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 2;
-  /* 确保内容区域可交互 */
   pointer-events: auto;
 }
 
-/* 交互式光波纹效果 */
-#aside-content > .card-widget.card-info .ripple {
+/* 交互式光波纹效果 - 仅夜间模式 */
+[data-theme="dark"] #aside-content > .card-widget.card-info .ripple {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(
@@ -222,7 +228,6 @@
   );
   transform: scale(0);
   animation: rippleEffect 2s ease-out;
-  /* 关键修改：禁用鼠标事件 */
   pointer-events: none;
 }
 
@@ -231,4 +236,132 @@
     transform: scale(4);
     opacity: 0;
   }
+}
+
+/* 白天模式卡片内容样式 */
+#aside-content > .card-widget.card-info .card-info-content {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* 白天模式卡片标题样式 */
+#aside-content > .card-widget.card-info .card-info-title {
+  position: relative;
+  color: #333;
+  z-index: 2;
+  pointer-events: auto;
+  font-weight: bold;
+}
+
+/* 白天模式卡片悬浮效果 */
+#aside-content > .card-widget.card-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 白天模式标题/副标题颜色 */
+#site-title,
+#site-subtitle,
+#site-name {
+  color: #333 !important; /* 深色文字 */
+}
+
+/* 夜间模式标题/副标题颜色 */
+[data-theme="dark"] #site-title,
+[data-theme="dark"] #site-subtitle,
+[data-theme="dark"] #site-name {
+  color: #fff !important; /* 亮色文字 */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* 增强夜间可读性 */
+}
+
+/* 菜单项基础样式 */
+.menus_items .menus_item a,
+.menus_items .menus_item span,
+#toggle-menu,
+.search span,
+.site-name {
+  color: #333 !important; /* 白天模式深色 */
+  transition: all 0.3s ease;
+}
+
+/* 夜间模式菜单颜色 */
+[data-theme="dark"] .menus_items .menus_item a,
+[data-theme="dark"] .menus_items .menus_item span,
+[data-theme="dark"] #toggle-menu,
+[data-theme="dark"] .search span,
+[data-theme="dark"] .site-name {
+  color: #fff !important; /* 夜间模式浅色 */
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* 菜单图标颜色适配 */
+.menus_items .menus_item i,
+#toggle-menu i,
+#search-button i,
+#search span {
+  color: #333 !important;
+}
+
+[data-theme="dark"] .menus_items .menus_item i,
+[data-theme="dark"] #toggle-menu i,
+[data-theme="dark"] #search-button i,
+#search span {
+  color: #fff !important;
+}
+
+/* 下拉菜单背景适配 */
+.menus_item_child {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .menus_item_child {
+  background: rgba(30, 30, 30, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 子菜单项颜色 */
+.menus_item_child a {
+  color: #333 !important;
+}
+
+[data-theme="dark"] .menus_item_child a {
+  color: #fff !important;
+}
+
+/* 悬停效果 */
+.menus_items .menus_item a:hover,
+.menus_items .menus_item span:hover {
+  color: #49b1f5 !important;
+}
+
+[data-theme="dark"] .menus_items .menus_item a:hover,
+[data-theme="dark"] .menus_items .menus_item span:hover {
+  color: #79bd8f !important;
+  text-shadow: 0 0 8px rgba(121, 189, 143, 0.5);
+}
+
+/* 导航栏容器整体玻璃态效果 */
+#nav {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border-radius: 12px;
+  padding: 8px 15px;
+  display: flex;
+  justify-content: center; /* 核心居中方案 */
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* 夜间模式适配 */
+[data-theme="dark"] #nav {
+  background: rgba(30, 30, 30, 0.8) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
