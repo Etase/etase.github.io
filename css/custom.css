@@ -366,8 +366,9 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
+/* 目录激活项 */
 .active > span {
-  color: rgb(97, 44, 0);
+  color: rgb(37, 17, 0);
 }
 
 /* 博文标题和信息 */
@@ -381,4 +382,9 @@
 /* 版权信息 */
 [data-theme="light"] .post-copyright-info > a {
   color: #333 !important;
+}
+
+/* 代码块背景 */
+.hljs {
+  background: rgba(0, 0, 0, 0) !important;
 }
