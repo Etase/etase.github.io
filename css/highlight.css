@@ -39,7 +39,7 @@ pre code.hljs {
   overflow-x: auto;
   padding: 1.2em;
   border-radius: 12px;
-  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+  /* background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%); */
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.1),
     inset 0 0 8px rgba(255, 255, 255, 0.05);
   font-family: "Fira Code", "JetBrains Mono", "Cascadia Code", Consolas,
