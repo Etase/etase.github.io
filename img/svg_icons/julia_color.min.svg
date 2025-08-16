@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Julia" viewBox="-51.2 -51.2 614.4 614.4"
+    style="--darkreader-inline-fill:var(--darkreader-background-000000, #000000);--darkreader-inline-stroke:var(--darkreader-text-000000, #e8e6e3)"
+    stroke="#000" opacity=".3">
+    <circle fill="#389826" cx="256" cy="137" r="83"
+        style="--darkreader-inline-fill:var(--darkreader-background-389826, #2d7a1e)" />
+    <circle fill="#cb3c33" cx="145" cy="329" r="83"
+        style="--darkreader-inline-fill:var(--darkreader-background-cb3c33, #a23029)" />
+    <circle fill="#9558b2" cx="367" cy="329" r="83"
+        style="--darkreader-inline-fill:var(--darkreader-background-9558b2, #703e87)" />
+</svg>

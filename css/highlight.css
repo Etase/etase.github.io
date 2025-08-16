@@ -4,14 +4,17 @@
 
   /* 工具栏使用深蓝紫，与代码背景形成层次 */
   --hltools-bg: #0f1419;
-  --hltools-color: #00f0ff; /* 使用函数名的霓虹青 */
+  --hltools-color: #00f0ff;
+  /* 使用函数名的霓虹青 */
 
   /* 行号区域使用深蓝黑，与工具栏协调 */
   --hlnumber-bg: #0a0a0f;
-  --hlnumber-color: #73aef6; /* 使用变量名的蓝色 */
+  --hlnumber-color: #73aef6;
+  /* 使用变量名的蓝色 */
 
   /* 滚动条和展开按钮使用霓虹粉 */
-  --hlscrollbar-bg: #ff6ec4; /* 关键字的霓虹粉 */
+  --hlscrollbar-bg: #ff6ec4;
+  /* 关键字的霓虹粉 */
   --hlexpand-bg: #ff6ec4;
 
   /* 添加霓虹发光效果 */
@@ -65,6 +68,7 @@ pre code.hljs > span:hover {
     opacity: 0;
     transform: scale(0.98);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -77,6 +81,7 @@ pre code.hljs > span:hover {
   100% {
     text-shadow: 0 0 8px var(--neon-color, rgba(255, 255, 255, 0.6));
   }
+
   50% {
     text-shadow: 0 0 16px var(--neon-color, rgba(255, 255, 255, 1));
   }
@@ -87,6 +92,7 @@ pre code.hljs > span:hover {
   0% {
     background-position: 0% 50%;
   }
+
   100% {
     background-position: 200% 50%;
   }
@@ -96,6 +102,7 @@ pre code.hljs > span:hover {
 .hljs-keyword {
   background: linear-gradient(90deg, #ff6ec4, #4c5bff, #00f0ff, #ff6ec4);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -106,6 +113,7 @@ pre code.hljs > span:hover {
 .hljs-title.function_ {
   background: linear-gradient(90deg, #00f0ff, #8be9fd, #4c5bff, #00f0ff);
   background-size: 200% auto;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -148,7 +156,8 @@ pre code.hljs > span:hover {
 
 /* 类型 */
 .hljs-built_in,
-.hljs-doctag, /* guessing */
+.hljs-doctag,
+/* guessing */
 .hljs-quote,
 .hljs-keyword.hljs-atrule,
 .hljs-regexp {
@@ -157,5 +166,5 @@ pre code.hljs > span:hover {
 
 /* 变量名 / 标识符 */
 .hljs-operator {
-  color: #bdbdbd;
+  color: #1098af;
 }

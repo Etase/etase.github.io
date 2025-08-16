@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Julia" viewBox="-51.2 -51.2 614.4 614.4" opacity=".9">
+    <defs>
+        <filter id="prefix__a">
+            <feGaussianBlur stdDeviation="15" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id="prefix__b">
+            <feGaussianBlur stdDeviation="15" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id="prefix__c">
+            <feGaussianBlur stdDeviation="15" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    <circle stroke="#389826" stroke-width="8" fill="none" cx="256" cy="137" r="83" filter="url(#prefix__a)" />
+    <circle stroke="#cb3c33" stroke-width="8" fill="none" cx="145" cy="329" r="83" filter="url(#prefix__b)" />
+    <circle stroke="#9558b2" stroke-width="8" fill="none" cx="367" cy="329" r="83" filter="url(#prefix__c)" />
+</svg>

@@ -1,3 +1,7 @@
+:root {
+  --placeholder-color: #333;
+}
+
 /* 页脚与头图透明 */
 #footer {
   background: transparent !important;
@@ -399,8 +403,109 @@
   width: fit-content;
   margin: auto;
   background: linear-gradient(90deg, #ff6ec4, #4c5bff, #00f0ff, #ff6ec4);
+  background-clip: text;
   -webkit-background-clip: text;
   background-size: auto;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
+}
+
+/* Markdown 强调 */
+[data-theme="dark"] strong {
+  text-decoration: underline wavy rgba(0, 245, 249, 0.5);
+}
+[data-theme="light"] strong {
+  text-decoration: underline wavy rgba(0, 89, 255, 0.8);
+}
+
+/* Markdown Inline Code */
+[data-theme="dark"] code:not(pre > code) {
+  width: fit-content;
+  margin: auto;
+  background: linear-gradient(90deg, #00f0ff, #ff6ec4) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  background-size: auto;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+[data-theme="light"] code {
+  width: fit-content;
+  margin: auto;
+  background: linear-gradient(90deg, #0040ff, #c30075) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  background-size: auto;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Markdown 内背景图标 */
+.svg-icon {
+  /* 确保父元素（.python-icon）有定位，以便伪元素可以绝对定位 */
+  position: relative;
+  /* 文本的样式保持不变 */
+  padding: 0 0.5em;
+  border-radius: 0.2em;
+  line-height: 1.5;
+  font-weight: bold;
+  /* 确保文本内容在伪元素之上，可选 */
+  z-index: 1;
+}
+
+[data-theme="light"] .svg-icon {
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+[data-theme="dark"] .svg-icon {
+  text-shadow: 0 0 4px rgba(255, 255, 255, 0.8),
+    /* 浅色外发光 */ 0 0 4px rgba(0, 0, 0, 0.3); /* 深色边缘增强 */
+}
+
+.svg-icon::before {
+  content: "";
+  /* 伪元素绝对定位，脱离文档流 */
+  position: absolute;
+  /* 让伪元素居中显示 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* 随意调整背景图的尺寸，这里是 2em x 2em */
+  width: 2.5em;
+  height: 2.5em;
+
+  background-repeat: no-repeat;
+  background-size: contain; /* 确保背景图完整显示在伪元素内 */
+  background-position: center;
+}
+
+[data-theme="dark"] .python-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/python_line.min.svg");
+}
+
+[data-theme="light"] .python-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/python_color.min.svg");
+}
+
+[data-theme="light"] .julia-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/julia_color.min.svg");
+}
+
+[data-theme="dark"] .julia-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/julia_line.min.svg");
+}
+
+[data-theme="light"] .blender-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/blender_color.min.svg");
+}
+
+[data-theme="dark"] .blender-icon::before {
+  /* 设置背景图像，可以随意调整大小 */
+  background-image: url("/img/svg_icons/blender_line.min.svg");
 }

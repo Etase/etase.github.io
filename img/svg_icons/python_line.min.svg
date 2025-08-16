@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 64 64" opacity=".3">
+    <linearGradient id="prefix__a" x1="27" x2="27" y1="11.043" y2="14.639" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#0f8" />
+        <stop offset="1" stop-color="#f0f" />
+    </linearGradient>
+    <circle cx="27" cy="13" r="2" fill="url(#prefix__a)" />
+    <linearGradient id="prefix__b" x1="37" x2="37" y1="49.128" y2="52.83" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#0ff" />
+        <stop offset="1" stop-color="#f0a" />
+    </linearGradient>
+    <circle cx="37" cy="51" r="2" fill="url(#prefix__b)" />
+    <linearGradient id="prefix__c" x1="32" x2="32" y1="6.66" y2="56.873" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#0ff" />
+        <stop offset=".5" stop-color="#0f8" />
+        <stop offset="1" stop-color="#f0f" />
+    </linearGradient>
+    <defs>
+        <filter id="prefix__d">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+    <path fill="url(#prefix__c)" filter="url(#prefix__d)"
+        d="M51 21h-7v-8c0-3.859-3.14-7-7-7H27c-3.86 0-7 3.141-7 7v8h-7c-3.86 0-7 3.141-7 7v8c0 3.859 3.14 7 7 7h7v8c0 3.859 3.14 7 7 7h10c3.86 0 7-3.141 7-7v-8h7c3.86 0 7-3.141 7-7v-8c0-3.859-3.14-7-7-7zM13 41c-2.757 0-5-2.243-5-5v-5h7v-2H8v-1c0-.342.035-.677.101-1H23v-2H9.026c.914-1.207 2.348-2 3.974-2h16v-2h-7v-8c0-2.757 2.243-5 5-5h10c2.757 0 5 2.243 5 5v15c0 1.654-1.346 3-3 3H25c-2.757 0-5 2.243-5 5v5h-7zm38 0H35v2h7v8c0 2.757-2.243 5-5 5H27c-2.757 0-5-2.243-5-5V36c0-1.654 1.346-3 3-3h14c2.757 0 5-2.243 5-5v-5h7c2.757 0 5 2.243 5 5v5h-7v2h7v1c0 .342-.035.677-.101 1H41v2h13.974c-.913 1.207-2.347 2-3.974 2z" />
+</svg>

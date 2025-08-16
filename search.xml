@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title></title>
+      <link href="/2025/08/16/MyBlog/0/"/>
+      <url>/2025/08/16/MyBlog/0/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Blender Python API (0)</title>
+      <link href="/2025/08/16/Blender/0/"/>
+      <url>/2025/08/16/Blender/0/</url>
+      
+        <content type="html"><![CDATA[<p>我们习惯于在<strong>二维平面上描绘数据的世界</strong>。<br>过去很长一段时间，我像许多数据工作者一样，依赖着<span class="svg-icon python-icon"> Python</span> 的 <code>Matplotlib</code>、<span class="svg-icon julia-icon">Julia</span> 的 <code>Makie</code> 等优秀传统框架。<br>我曾为它们绘制出精美的散点图、热力图、动态折线图而欣喜，也曾为了在有限的平面空间里，绞尽脑汁地展现高维数据的结构、捕捉复杂系统中的动态关系、或者让网络拓扑中的关键连接一目了然而感到力不从心。</p><p>我想是时候做出改变了。<br>三天前，我在查找 <span class="svg-icon blender-icon">Blender</span> 的入门资料时，偶然翻到了一篇介绍 <code>Blender Python API</code> 的文档 —— 那一刻我才意识到，这就是我真正想要的突破口。<br>它不仅能用代码塑造几何形体，还能操控材质、光影、动画乃至物理模拟。</p><!-- 对于一个长期在平面图表的“方寸之地”里与数据打交道的我来说，这感觉太奇妙了。数据不再仅仅是屏幕上的线条和色块，它们仿佛被赋予了体积、重量和生命，被“置入”一个可感、可走入、可互动的立体空间。想象一下，那些抽象的关系，变成了可以环绕观察、甚至“触摸”的实体——这简直是数据表达的一次维度跃迁！ --><p>在接下来的系列文章里，我们将逐步探索 <code>Blender Python API</code> 的强大潜力，欣赏它如何将冰冷的数据，转化为充满魅力的三维叙事。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Blender Python API (1)</title>
       <link href="/2025/08/15/Blender/1/"/>
       <url>/2025/08/15/Blender/1/</url>
