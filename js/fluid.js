@@ -1,14 +1,15 @@
-// 物理流场背景效果 - 自然流体版（性能优化版）
+// 物理流场背景效果 - 自然流体版（滚动响应版）
 function fluidFlowField() {
   const canvas = document.createElement("canvas");
-  const ctx = canvas.getContext("2d", { alpha: true }); // 修改1：启用透明度
+  const ctx = canvas.getContext("2d", { alpha: true });
   canvas.style.position = "fixed";
   canvas.style.top = "0";
   canvas.style.left = "0";
   canvas.style.width = "100%";
   canvas.style.height = "100%";
   canvas.style.zIndex = "-1";
-  canvas.style.opacity = "0.8";
+  canvas.style.opacity = "0.2"; // 初始透明度
+  canvas.style.transition = "opacity 0.3s ease"; // 添加过渡效果
   document.body.appendChild(canvas);
 
   let width = window.innerWidth;
@@ -18,6 +19,7 @@ function fluidFlowField() {
   let mouseY = height / 2;
   let isDarkMode =
     document.documentElement.getAttribute("data-theme") === "dark";
+  let scrollOpacity = 0.6; // 滚动影响下的透明度因子
 
   // 设置canvas尺寸
   function resizeCanvas() {
@@ -36,7 +38,6 @@ function fluidFlowField() {
       if (mutation.attributeName === "data-theme") {
         isDarkMode =
           document.documentElement.getAttribute("data-theme") === "dark";
-        // 修改2：主题变化时重置粒子颜色
         particles.forEach((p) => p.reset());
       }
     });
@@ -46,6 +47,35 @@ function fluidFlowField() {
     attributes: true,
     attributeFilter: ["data-theme"],
   });
+
+  // 存储最大滚动距离的变量
+  let maxScroll = 0;
+
+  // 更新最大滚动距离的函数
+  function updateMaxScroll() {
+    maxScroll =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+  }
+  updateMaxScroll();
+
+  // 监听滚动事件
+  function handleScroll() {
+    const scrollY = window.scrollY;
+
+    // 计算滚动比例（0-1之间）
+    const scrollRatio = Math.min(scrollY / maxScroll, 1);
+
+    // 更新透明度因子：顶部为1（不透明），底部为0.2（半透明）
+    scrollOpacity = 0.6 + scrollRatio * 0.4;
+
+    // 更新画布透明度
+    canvas.style.opacity = 0.8 * scrollOpacity;
+  }
+
+  // 初始设置和滚动监听
+  handleScroll();
+  window.addEventListener("scroll", handleScroll);
 
   // 简化的噪声函数（优化版）
   function noise(x, y, z) {
@@ -135,7 +165,7 @@ function fluidFlowField() {
   // 流场类（优化版）
   class FlowField {
     constructor() {
-      this.scale = 30; // 增加格子大小，减少计算量
+      this.scale = 30;
       this.cols = Math.floor(width / this.scale) + 1;
       this.rows = Math.floor(height / this.scale) + 1;
       this.field = [];
@@ -227,24 +257,21 @@ function fluidFlowField() {
       this.speed = Math.random() * 0.5 + 0.5;
       this.angle = Math.random() * Math.PI * 2;
       this.prevAngle = this.angle;
-      this.size = Math.random() * 1.5 + 0.5; // 减小粒子尺寸
+      this.size = Math.random() * 1.5 + 0.5;
       this.life = 1;
       this.decay = Math.random() * 0.005 + 0.002;
-      // 修改3：使用当前主题颜色
       this.color = isDarkMode
         ? `hsl(${Math.random() * 60 + 180}, 80%, 60%)`
         : `hsl(${Math.random() * 60 + 20}, 80%, 40%)`;
     }
 
     update(flowField) {
-      // 获取流场力
       const force = flowField.lookup(this.x, this.y);
 
-      // 添加鼠标影响（优化版）
       const dx = mouseX - this.x;
       const dy = mouseY - this.y;
-      const mouseDistanceSq = dx * dx + dy * dy; // 使用平方距离避免开方
-      const mouseRadiusSq = 100 * 100; // 减小影响半径
+      const mouseDistanceSq = dx * dx + dy * dy;
+      const mouseRadiusSq = 100 * 100;
 
       if (mouseDistanceSq < mouseRadiusSq) {
         const strength = 1 - mouseDistanceSq / mouseRadiusSq;
@@ -252,76 +279,76 @@ function fluidFlowField() {
         force.y += dy * strength * 0.02;
       }
 
-      // 应用力到角度
       const targetAngle = Math.atan2(force.y, force.x);
       this.angle = this.angle * 0.7 + targetAngle * 0.3;
 
-      // 更新速度
       const targetSpeed = Math.min(this.maxSpeed, force.mag() * 5);
       this.speed = this.speed * 0.9 + targetSpeed * 0.1;
 
-      // 更新位置
       this.prevX = this.x;
       this.prevY = this.y;
       this.x += Math.cos(this.angle) * this.speed;
       this.y += Math.sin(this.angle) * this.speed;
 
-      // 边界检查
       if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
         this.reset();
       }
 
-      // 生命周期
       this.life -= this.decay;
       if (this.life <= 0) {
         this.reset();
       }
     }
 
-    draw(ctx) {
-      // 修改4：添加线条端点样式
+    draw(ctx, scrollOpacity) {
       ctx.lineCap = "round";
       ctx.beginPath();
       ctx.moveTo(this.prevX, this.prevY);
       ctx.lineTo(this.x, this.y);
-      ctx.strokeStyle = this.color;
-      ctx.lineWidth = this.size * this.life;
+
+      // 根据滚动位置调整粒子透明度
+      const particleOpacity = scrollOpacity * this.life;
+      ctx.strokeStyle = this.color
+        .replace(")", `, ${particleOpacity})`)
+        .replace("hsl", "hsla");
+
+      ctx.lineWidth = this.size * scrollOpacity; // 滚动时线条变粗
       ctx.stroke();
     }
   }
 
-  // 创建流场和粒子（优化版）
+  // 创建流场和粒子
   const flowField = new FlowField();
   const particles = [];
-  const particleCount = Math.floor((width * height) / 40000); // 减少粒子数量
+  const particleCount = Math.floor((width * height) / 40000);
 
   for (let i = 0; i < particleCount; i++) {
     particles.push(new Particle());
   }
 
-  // 鼠标移动事件（优化版）
+  // 鼠标移动事件
   let mouseMoveTimeout;
   document.addEventListener("mousemove", (e) => {
-    // 使用节流减少更新频率
     if (!mouseMoveTimeout) {
       mouseMoveTimeout = setTimeout(() => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         mouseMoveTimeout = null;
-      }, 50); // 50ms节流
+      }, 50);
     }
   });
 
-  // 动画循环（优化版）
+  // 动画循环
   let frameCount = 0;
   function animate() {
-    // 修改5：增加清除透明度，使拖尾效果更明显
+    // 根据滚动位置调整背景清除强度
+    const clearAlpha = 0.2 - scrollOpacity * 0.1; // 深色模式：0.1-0.9
+
     ctx.fillStyle = isDarkMode
-      ? "rgba(10, 10, 10, 0.1)" // 增加透明度
-      : "rgba(245, 245, 245, 0.1)";
+      ? `rgba(10, 10, 10, ${clearAlpha})`
+      : `rgba(245, 245, 245, ${clearAlpha})`;
     ctx.fillRect(0, 0, width, height);
 
-    // 减少流场更新频率
     if (frameCount % 15 === 0) {
       flowField.update();
     }
@@ -329,7 +356,7 @@ function fluidFlowField() {
     // 批量更新和绘制粒子
     for (let i = 0; i < particles.length; i++) {
       particles[i].update(flowField);
-      particles[i].draw(ctx);
+      particles[i].draw(ctx, scrollOpacity); // 传递滚动透明度
     }
 
     frameCount++;
@@ -342,7 +369,7 @@ function fluidFlowField() {
   animate();
 }
 
-// 延迟启动，确保主题资源加载完成
-setTimeout(fluidFlowField, 1000);
 // 启动效果
 // fluidFlowField();
+// 延迟启动，确保主题资源加载完成
+setTimeout(fluidFlowField, 1000);

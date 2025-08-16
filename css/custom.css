@@ -1,5 +1,36 @@
 :root {
   --placeholder-color: #333;
+  --reward-text-color: #333; /* 赞助文字颜色 */
+  --reward-after-background-color: #ffffff; /* 赞助背景颜色 */
+  --reward-border-weight: 1px; /* 赞助边框粗细 */
+  --reward-border-color: none; /* 赞助边框颜色 */
+  --reward-after-display: none; /* 赞助按钮空心 */
+  --footer-custom-text-color: linear-gradient(90deg, #00f0ff, #4c5bff, #00f0ff);
+}
+
+[data-theme="light"] {
+  --placeholder-color: #333;
+  --reward-text-color: #333;
+  --reward-after-background-color: #ffffff;
+  --reward-border-color: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1
+  ); /* 赞助边框颜色 */
+  --reward-after-display: none; /* 赞助按钮空心 */
+}
+
+[data-theme="dark"] {
+  --reward-text-color: #ffffff;
+  --reward-after-background-color: #121212;
+  --reward-border-color: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #4ecdc4,
+    #45b7d1
+  ); /* 赞助边框颜色 */
+  --reward-after-display: block; /* 赞助按钮空心 */
 }
 
 /* 页脚与头图透明 */
@@ -388,6 +419,97 @@
   color: #333 !important;
 }
 
+[data-theme="dark"] .post-copyright-meta {
+  background: linear-gradient(90deg, #4c5bff, #00f0ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: auto;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+[data-theme="light"] .post-copyright-meta {
+  background: linear-gradient(90deg, #191e55, #0011ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: auto;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+[data-theme="light"] .post-copyright {
+  border: 2px dashed #333 !important;
+}
+
+[data-theme="light"] .post-copyright:hover {
+  /* 鼠标悬停时：显示阴影 */
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="dark"] .post-copyright {
+  border: 2px dashed #d1d1d1 !important;
+}
+
+/* 赞助按钮 */
+.reward-button {
+  /* 初始状态 */
+  background: transparent;
+  border: none;
+  color: var(--reward-text-color) !important;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+/* 使用伪元素创建渐变边框 */
+.reward-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--reward-border-color);
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.reward-button::after {
+  display: var(--reward-after-display);
+  content: "";
+  position: absolute;
+  top: var(--reward-border-weight);
+  left: var(--reward-border-weight);
+  right: var(--reward-border-weight);
+  bottom: var(--reward-border-weight);
+  background: var(--reward-after-background-color) !important;
+  border-radius: inherit;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* 鼠标悬浮状态 */
+.reward-button:hover {
+  color: white;
+}
+
+.reward-button:hover::after {
+  opacity: 0;
+}
+
+/* 可选：添加圆角 */
+.reward-button,
+.reward-button::before,
+.reward-button::after {
+  border-radius: 5px;
+}
+
 /* 代码块背景 */
 .hljs {
   background: rgba(0, 0, 0, 0) !important;
@@ -402,7 +524,7 @@
 .footer_custom_text {
   width: fit-content;
   margin: auto;
-  background: linear-gradient(90deg, #ff6ec4, #4c5bff, #00f0ff, #ff6ec4);
+  background: var(--footer-custom-text-color);
   background-clip: text;
   -webkit-background-clip: text;
   background-size: auto;
@@ -411,10 +533,10 @@
 }
 
 /* Markdown 强调 */
-[data-theme="dark"] strong {
+[data-theme="dark"] strong:not(.tk-nick) {
   text-decoration: underline wavy rgba(0, 245, 249, 0.5);
 }
-[data-theme="light"] strong {
+[data-theme="light"] strong:not(.tk-nick) {
   text-decoration: underline wavy rgba(0, 89, 255, 0.8);
 }
 
