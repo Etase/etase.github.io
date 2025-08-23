@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>GRUB 主题设置</title>
+      <link href="/2025/08/23/Micellaneous/about_grub/"/>
+      <url>/2025/08/23/Micellaneous/about_grub/</url>
+      
+        <content type="html"><![CDATA[<p>在 <code>/etc/default/grub.cfg</code> 配置好主题后，重启不生效。</p><p>经查询发现，需要使用 <code>grub-install</code> 命令重新安装引导</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> grub-install --target=x86_64-efi --efi-directory=/boot/EFI --bootloader-id=Archlinux --recheck<br></code></pre></td></tr></tbody></table></figure><p>运行命令后，生成的 <code>efi</code> 文件位置不对。更改为</p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">sudo</span> grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Archlinux --recheck<br></code></pre></td></tr></tbody></table></figure><p>重新运行后，再更新 <code>grub.cfg</code></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></tbody></table></figure><p>再次重启后，成功加载壁纸和主题。</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Test</title>
       <link href="/2025/08/16/test/"/>
       <url>/2025/08/16/test/</url>
