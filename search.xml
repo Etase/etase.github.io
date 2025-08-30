@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Model Context Protocol(MCP) Server Construction</title>
+      <link href="/2025/08/26/Micellaneous/learning_about_mcp/"/>
+      <url>/2025/08/26/Micellaneous/learning_about_mcp/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Preface">Preface</h2><p>Recently, I have been used to writing in English.<br>This is the my first English post ever, which is about MCP server construction. This post will introduce the basic concepts of MCP server construction and provide some examples.</p><h2 id="Intrduction">Intrduction</h2><p>Model Context Protocol, or MCP for short, is a protocol that allows a client to interact with a server in a standardized way. It is used to provide a consistent interface for clients to access and manipulate data on the server.</p><p>How did I find it? Since I started using AI models, I’ve been persuing a way to automate my workflow with them. However, every program I tried to implement with automation ended up with nothing stable.</p><p>I began to search for a solution to this problem. Then I found that MCP server construction might be a good way to solve this problem.</p><h2 id="How-do-I-Begin">How do I Begin?</h2><p>My first step is to construct a simply example MCP server, using Python. Simultaneously, I’m getting use to Zed editor, which is well integrated with AI functionalities.</p><p>The first project is to let AI complete a science computing toolkit in Python, I gave it the target and a set of tools:</p><ul><li>execute shell command (with my approval)</li><li>create and edit files</li><li>read files</li></ul><p>Then it automatically working by itself, I saw it write project plans, start working day by day, writing examples, and record what it did. Finally it actually realize a comprehension project, which may be too hard for me to finish. It’s fantastically amazing, and that’s why I’m writing this post.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>纪念 2020 年的日环食</title>
       <link href="/2025/08/23/Vibration/eclipse_in_2020/"/>
       <url>/2025/08/23/Vibration/eclipse_in_2020/</url>
@@ -35,19 +48,6 @@
       <url>/2025/08/16/test/</url>
       
         <content type="html"><![CDATA[<div class="note blue icon-padding simple"><i class="note-icon fab fa-cc-visa"></i><p>你是刷 Visa 还是 UnionPay</p></div><div class="chartjs-container" data-chartjs-id="">            <pre class="chartjs-src" hidden="">{"type": "radar","data": {"labels": ["Eating","Drinking","Sleeping","Designing","Coding","Cycling","Running"],"datasets": [{"label": "My First Dataset","data": [65, 59, 90, 81, 56, 55, 40],"fill": true,"backgroundColor": "rgba(255, 99, 132, 0.2)","borderColor": "rgb(255, 99, 132)","pointBackgroundColor": "rgb(255, 99, 132)","pointBorderColor": "#fff","pointHoverBackgroundColor": "#fff","pointHoverBorderColor": "rgb(255, 99, 132)"},{"label": "My Second Dataset","data": [28, 48, 40, 19, 96, 27, 100],"fill": true,"backgroundColor": "rgba(54, 162, 235, 0.2)","borderColor": "rgb(54, 162, 235)","pointBackgroundColor": "rgb(54, 162, 235)","pointBorderColor": "#fff","pointHoverBackgroundColor": "#fff","pointHoverBorderColor": "rgb(54, 162, 235)"}]},"options": {"elements": {"line": {"borderWidth": 3}}}}</pre>                      </div>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/2025/08/16/MyBlog/0/"/>
-      <url>/2025/08/16/MyBlog/0/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
