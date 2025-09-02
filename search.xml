@@ -4,7 +4,46 @@
   
     
     <entry>
-      <title>Daily</title>
+      <title>Abstrust Development Journey</title>
+      <link href="/2025/09/02/Development/Abstrust/start_up/"/>
+      <url>/2025/09/02/Development/Abstrust/start_up/</url>
+      
+        <content type="html"><![CDATA[<p>The Abstrust project is a Rust application that aims to overview the whole project showing code signages in each file, especially for large projects.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Daily 2025-09-02</title>
+      <link href="/2025/09/02/Vibration/daily_20250902/"/>
+      <url>/2025/09/02/Vibration/daily_20250902/</url>
+      
+        <content type="html"><![CDATA[<p>Today I’ve thought about my recent plans. The determination originated from the moment that I’m troubled by current note taking applications.<br>The way I think in learning is layer by layer, continuously probing deeper. But the current note taking systems can’t meet my needs. I’m eager to create an efficient, conception-expandable and layer-supportable system.<br>That’s the reason I determine to spend a certain amount of time for Rust development. This in the other hand, serves as a good ending for my pursuit of programming, I must at least publish something useful and recognizable.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Abstrust Core Library</title>
+      <link href="/2025/09/02/Development/Abstrust/core/"/>
+      <url>/2025/09/02/Development/Abstrust/core/</url>
+      
+        <content type="html"><![CDATA[<p>Today is 2025-09-02, I just completed the core library “abstrust_core” of Abstrust project.<br>The core library is responsible for definitions of all the basic data structures, especially the parsed code types like FunctionDef, StructDef ,EnumDef and so on.<br>In addition, I supplied the source code with comprehensive tests, examples and documentation, which all passed successfully.</p><p>The project is available at <a href="https://github.com/Etase/Abstrust">GitHub</a>.</p><p>The next step is, by decision, to implement the parser library “abstrust_parser”, which will be responsible for parsing the source code into the data structures defined in the core library.<br>The progress seems to be going fast, and I expect to finish it within a week, before I throw myself into the Math Modelling Competition.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Daily 2025-09-01</title>
       <link href="/2025/09/01/Vibration/daily_20250901/"/>
       <url>/2025/09/01/Vibration/daily_20250901/</url>
       
@@ -34,7 +73,7 @@
       <link href="/2025/08/31/Development/overview/"/>
       <url>/2025/08/31/Development/overview/</url>
       
-        <content type="html"><![CDATA[<p>2025-08-31, I started three projects in one day, including:</p><ul><li>Aether: A development tool for recording project issues and plans, and managing project progress.</li><li>Aura: A notification application for custom event’s notifications.</li><li>Abstrust: A development tool for overviewing the the whole project showing code signages in each file.</li></ul><p>all projects are developed in Rust, these are my important attempts to achieve a breakthrough.</p>]]></content>
+        <content type="html"><![CDATA[<p>2025-08-31, I started three projects in one day, including:</p><ul><li>Aether: A development tool for recording project issues and plans, and managing project progress.</li><li>Aura: A notification application for custom event’s notifications.</li><li>Abstrust: A development tool for overviewing the whole project showing code signages in each file.</li></ul><p>all projects are developed in Rust, these are my important attempts to achieve a breakthrough.</p>]]></content>
       
       
       
@@ -69,7 +108,7 @@
     
     
     <entry>
-      <title>纪念 2020 年的日环食</title>
+      <title>Commemorate the Annular Solar Eclipse in 2020</title>
       <link href="/2025/08/23/Vibration/eclipse_in_2020/"/>
       <url>/2025/08/23/Vibration/eclipse_in_2020/</url>
       
