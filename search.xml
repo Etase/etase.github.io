@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>Abstrust Parser Library</title>
+      <link href="/2025/09/03/Development/Abstrust/parser/"/>
+      <url>/2025/09/03/Development/Abstrust/parser/</url>
+      
+        <content type="html"><![CDATA[<p>Today is 2025-09-03, I start the development of “abstrust_parser” library based on the already completed “abstrust_core”.<br>Although I’ve made comprehensive documentation of the core library, the difficulty is making agents work across multiple libraries.<br>Currently, I simply copy the whole documentation folder to the new library for reference, at least finally works.<br>But as the amount of libraries grows, I may need to find a more efficient way.<br>Multiple agents might be a direct solution. Just like a person comes and goes mastering information about multiple cities, versus several people mastering each city individually and collaborating to share knowledge.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Abstrust Development Journey</title>
       <link href="/2025/09/02/Development/Abstrust/start_up/"/>
       <url>/2025/09/02/Development/Abstrust/start_up/</url>
