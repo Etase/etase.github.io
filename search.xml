@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>When I&#39;m Learning - 20250910</title>
+      <link href="/2025/09/10/WhenI&#39;mLearning/20250910/"/>
+      <url>/2025/09/10/WhenI&#39;mLearning/20250910/</url>
+      
+        <content type="html"><![CDATA[<h1>What I Thought and Learned</h1><p>Let me quickly review today’s adventure. Today feels like a blooming day. I opened up a new territory by setting up a dedicated workspace on my iPad.</p><p>My Obsidian setup is evolving, with a neater interface and a more lucid knowledge universe.</p><p>Today’s main learning focus on Quantum Mechanics and Graph Theory. In the morning, I engaged in some critical thinking with Gemini, exploring the essence of the Complex Representation in Quantum Mechanics.<br>I argued that the use of complex numbers in Quantum Mechanics is not unique—many other physical fields employ them as well.<br>I even suggested that we can substitute the complex system with an equivalent matrix representation, in order that the Quantum Mechanics doesn’t need the complex numbers any more.<br>This convinced me, for a while, that complex numbers might not be essential to Quantum Mechanics.</p><p>However, a fact revealed by Gemini made me waver. It mentioned that the matrix system and complex system are not completely equivalent when it comes to Tensor Products, which are applied for multi-entangled systems.<br>Since I know very little about this area, I must remain cautious about it and postpone any final assertion until I’m confident enough.</p><h1>Exploration in Another Universe</h1><p>Now making contribution doesn’t seem as daunting as I once thought, I can start helping fix bugs I encounter. But developing an entire application seems not that easy, perhaps I should rely more on the power of community and open-source contributors.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>When I&#39;m Learning - 20250909</title>
       <link href="/2025/09/09/WhenI&#39;mLearning/20250909/"/>
       <url>/2025/09/09/WhenI&#39;mLearning/20250909/</url>
